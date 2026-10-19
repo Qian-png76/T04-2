@@ -4,11 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - Appliance Energy</title>
-  <div id="content"></div>
-    <svg width="300" height="150"></svg>
   <link rel="stylesheet" href="style.css">
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-<script src="energy-d3.js"></script>
 </head>
 <body>
   <nav>
@@ -21,10 +17,11 @@
   </nav>
 
   <main>
-    <h1>Welcome to Appliance Energy Insights</h1>
-    <p>Understanding energy consumption in Australian households is key to saving money and reducing environmental impact.</p>
-    <p>On this site, you will find placeholder data and insights about how much energy common appliances use. Did you know that standby power can account for up to 10% of your electricity bill?</p>
-    <p>Explore the <strong>Televisions</strong> page to learn more about modern TV energy ratings, and check out the <strong>About Us</strong> page to see how this site was built.</p>
+      <h1>Appliance Energy Consumption</h1>
+      <div id="content"></div>
+      
+      <!-- Give the SVG a size so shapes can be seen -->
+      <svg width="300" height="150"></svg>
   </main>
 
   <footer>
@@ -32,7 +29,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="energy-d3.js"></script>
 </body>
 </html>
