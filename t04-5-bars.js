@@ -17,24 +17,13 @@ const createBarChart = (data) => {
     const xMax = d3.max(data, d => d.count);
     const xScale = d3.scaleLinear()
         .domain([0, xMax])
-        .range([0, viewW]);
+        .range([0, viewW - labelX - 50]);// leave spaxes for labels and right margin
 
     const yScale = d3.scaleBand()
         .domain(data.map(d => d.brand))
         .range([0, viewH])
         .paddingInner(0.2)
         .paddingOuter(0.1);
-
-    // OLD rectangle-only drawing block from T04-6 (COMMENTED OUT for T04-7).
-    /* svg.selectAll("rect")
-        .data(data)
-        .join("rect")
-            .attr("class", d => `bar bar-${d.count}`)
-            .attr("x", 0).attr("y", d => yScale(d.brand))
-            .attr("width", d => xScale(d.count))
-            .attr("height", yScale.bandwidth())
-            .attr("fill", "steelblue");
-    */
 
     // --- NEW in T04-7: group per row (bar + labels move together) ---
     // Using x = 100 so labels align at 100 and bars start there too.
