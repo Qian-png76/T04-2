@@ -4,6 +4,7 @@ const createBarChart = (data) => {
     const viewH = Math.max(220, data.length * 28);
     const displayW = 640;
     const displayH = Math.min(480, data.length * 24 + 40);
+    const labelX = 100;
 
     // --- SVG root ---
     const svg = d3.select(".responsive-svg-container")
@@ -25,9 +26,8 @@ const createBarChart = (data) => {
         .paddingInner(0.2)
         .paddingOuter(0.1);
 
-    // --- NEW in T04-7: group per row (bar + labels move together) ---
-    // Using x = 100 so labels align at 100 and bars start there too.
-    const labelX = 100;
+    //in T04-7: group per row (bar + labels move together)
+    // Using x = 100 so labels align at 100 and bars start there
     const barAndLabel = svg
         .selectAll("g")
         .data(data)
